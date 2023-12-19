@@ -39,8 +39,6 @@ See `:help dap-probe-rs`
 
 ## Custom configuration
 
-If you call the `require('dap-python').setup` method it will create a few `nvim-dap` configuration entries. These configurations are general purpose configurations suitable for many use cases, but you may need to customize the configurations.
-
 To add your own entries, you can extend the `dap.configurations["probe-rs-debug"]` list after calling the `setup` function:
 
 ```vimL
@@ -58,7 +56,6 @@ EOF
 
 [1]: https://github.com/mfussenegger/nvim-dap
 [4]: https://github.com/nvim-treesitter/nvim-treesitter
-[5]: https://github.com/tree-sitter/tree-sitter-python
 [6]: https://github.com/junegunn/vim-plug
 [7]: https://github.com/wbthomason/packer.nvim
 [8]: https://github.com/folke/lazy.nvim
