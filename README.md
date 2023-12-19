@@ -1,6 +1,6 @@
-# nvim-dap-python
+# nvim-dap-probe-rs
 
-An extension for [nvim-dap][1] providing default configurations for python and methods to debug individual test methods or classes.
+An extension for [nvim-dap][1] providing default configurations for probe-rs.
 
 
 ## Installation

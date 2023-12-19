@@ -1,0 +1,54 @@
+==============================================================================
+Probe-rs extension for nvim-dap                                   *dap-probe-rs*
+
+M.setup({adapter_probe_rs_path}, {opts})                    *dap-probe-rs.setup*
+     Register the probe-rs debug adapter
+
+    Parameters: ~
+        {adapter_probe_rs_path}  (string|nil)     Path to the python interpreter. Path must be absolute or in $PATH and needs to have the debugpy package installed. Default is `python3`
+        {opts}                   (SetupOpts|nil)  See |dap-python.SetupOpts|
+
+
+PathMapping                                           *dap-probe-rs.PathMapping*
+
+    Fields: ~
+        {localRoot}   (string)
+        {remoteRoot}  (string)
+
+
+ProbersLaunchConfig                           *dap-probe-rs.ProbersLaunchConfig*
+
+    Fields: ~
+        {module}       (string|nil)      Name of the module to debug
+        {program}      (string|nil)      Absolute path to the program
+        {code}         (string|nil)      Code to execute in string form
+        {python}       (string[]|nil)    Path to python executable and interpreter arguments
+        {args}         (string[]|nil)    Command line arguments passed to the program
+        {console}      (DebugpyConsole)  See |dap-python.DebugpyConsole|
+        {cwd}          (string|nil)      Absolute path to the working directory of the program being debugged.
+        {env}          (table|nil)       Environment variables defined as key value pair
+        {stopOnEntry}  (boolean|nil)     Stop at first line of user code.
+
+
+DebugOpts                                               *dap-probe-rs.DebugOpts*
+
+    Fields: ~
+        {console}      (DebugpyConsole)  See |dap-python.DebugpyConsole|
+        {test_runner}  ()
+
+
+SetupOpts                                               *dap-probe-rs.SetupOpts*
+
+    Fields: ~
+        {include_configs}  (boolean|nil)     Include default configurations. Default is `true`
+        {console}          (DebugpyConsole)  See |dap-python.DebugpyConsole|
+        {probersPath}      (string|nil)      Path to probe-rs binary. Uses `adapter_python_path` by default
+
+
+DebugpyConsole                                                  *DebugpyConsole*
+
+    Type: ~
+        
+
+
+vim:tw=78:ts=8:noet:ft=help:norl:
