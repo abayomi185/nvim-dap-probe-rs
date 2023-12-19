@@ -11,8 +11,8 @@ local function load_dap()
 end
 
 --- Register the probe-rs debug adapter
----@param adapter_probe_rs_path string|nil Path to the python interpreter. Path must be absolute or in $PATH and needs to have the debugpy package installed. Default is `python3`
----@param opts SetupOpts|nil See |dap-python.SetupOpts|
+---@param adapter_probe_rs_path string|nil Path to probe-rs binary. Path must be absolute or in $PATH. Default is `probe-rs`
+---@param opts SetupOpts|nil See |dap-probe-rs.SetupOpts|
 function M.setup(adapter_probe_rs_path, opts)
   local dap = load_dap()
 
@@ -52,22 +52,12 @@ end
 ---@field module string|nil Name of the module to debug
 ---@field program string|nil Absolute path to the program
 ---@field code string|nil Code to execute in string form
----@field python string[]|nil Path to python executable and interpreter arguments
 ---@field args string[]|nil Command line arguments passed to the program
----@field console DebugpyConsole See |dap-python.DebugpyConsole|
 ---@field cwd string|nil Absolute path to the working directory of the program being debugged.
 ---@field env table|nil Environment variables defined as key value pair
 ---@field stopOnEntry boolean|nil Stop at first line of user code.
 
----@class DebugOpts
----@field console DebugpyConsole See |dap-python.DebugpyConsole|
--- -@field config DebugpyConfig Overrides for the configuration
-
 ---@class SetupOpts
 ---@field include_configs boolean|nil Include default configurations. Default is `true`
----@field console DebugpyConsole See |dap-python.DebugpyConsole|
----@field probersPath string|nil Path to probe-rs binary. Uses `adapter_python_path` by default
-
----@alias DebugpyConsole "internalConsole"|"integratedTerminal"|"externalTerminal"|nil
 
 return M
