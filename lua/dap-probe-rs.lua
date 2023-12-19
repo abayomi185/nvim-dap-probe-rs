@@ -35,6 +35,13 @@ function M.setup(adapter_probe_rs_path, opts)
     end
   end
 
+  -- Listen to custom events
+  -- dap.listeners.before["probe-rs-rtt-channel-config"] = function(session, body)
+  --   if event == "dap-probe-rs:ready" then
+  --     dap.continue()
+  --   end
+  -- end
+
   if opts.include_configs then
     local configs = dap.configurations["probe-rs-debug"] or {}
     dap.configurations["probe-rs-debug"] = configs
