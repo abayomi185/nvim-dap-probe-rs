@@ -53,9 +53,9 @@ function M.setup(adapter_probe_rs_path, opts)
 
   opts = vim.tbl_extend("keep", opts or {}, default_setup_opts)
 
-  dap.adapters["probe-rs-debug"] = function(cb, config)
+  dap.adapters["probe-rs-debug"] = function(callback, config)
     if config.request == "launch" then
-      cb({
+      callback({
         type = "server",
         host = "localhost",
         port = "${port}",
