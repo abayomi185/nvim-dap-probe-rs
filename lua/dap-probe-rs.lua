@@ -42,14 +42,6 @@ local function get_module_path()
   end
 end
 
----@private
-function M.test_runners.unittest(classname, methodname)
-  local path = get_module_path()
-  local test_path = table.concat(prune_nil({ path, classname, methodname }), ".")
-  local args = { "-v", test_path }
-  return "unittest", args
-end
-
 --- Register the probe-rs debug adapter
 ---@param adapter_probe_rs_path string|nil Path to the python interpreter. Path must be absolute or in $PATH and needs to have the debugpy package installed. Default is `python3`
 ---@param opts SetupOpts|nil See |dap-python.SetupOpts|
@@ -192,10 +184,6 @@ local function remove_indent(lines)
   end
 end
 
----@class PathMapping
----@field localRoot string
----@field remoteRoot string
-
 ---@class ProbersLaunchConfig
 ---@field module string|nil Name of the module to debug
 ---@field program string|nil Absolute path to the program
@@ -209,7 +197,6 @@ end
 
 ---@class DebugOpts
 ---@field console DebugpyConsole See |dap-python.DebugpyConsole|
----@field test_runner "unittest"|"pytest"|"django"|string name of the test runner. Default is |dap-python.test_runner|
 -- -@field config DebugpyConfig Overrides for the configuration
 
 ---@class SetupOpts
