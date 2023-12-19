@@ -2,6 +2,10 @@
 
 An extension for [nvim-dap][1] providing default configurations for probe-rs.
 
+```lua
+-- Load launch.json if using VSCode launch.json
+require("dap.ext.vscode").load_launchjs(nil, { rt_lldb = { "rust" }, ["probe-rs-debug"] = { "rust" } })
+```
 
 ## Installation
 
