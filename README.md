@@ -47,11 +47,8 @@ Install either:
 1. Call `setup` in your `init.vim` to register the adapter and configurations:
 
 ```vimL
-lua require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+lua require('dap-probe-rs').setup()
 ```
-
-The argument to `setup` is the path to the python installation which contains the `debugpy` module.
-
 
 2. Use nvim-dap as usual.
 
